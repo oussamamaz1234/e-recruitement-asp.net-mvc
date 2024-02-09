@@ -1,0 +1,51 @@
+﻿@model Project2024.Models.Recruiter
+
+@{
+    ViewBag.Title = "DetailsProfile";
+}
+
+
+<div class="container">
+    <h2>DetailsProfile</h2>
+
+    <div>
+        <h4>Recruiter</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.RecruiterName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RecruiterName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.RecruiterMail)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RecruiterMail)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.RecruiterPassword)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RecruiterPassword)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.RecruiterTel)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.RecruiterTel)
+            </dd>
+
+        </dl>
+    </div>
+</div>
+
+

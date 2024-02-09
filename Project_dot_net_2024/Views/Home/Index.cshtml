@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<main class="container bg-light" @*style="background-color: rgb(241, 241, 241)"*@>
+    <div class="">
+        <hr class="featurette-divider" />
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading text-center">E-Recrutement.</h2>
+                <h4 class="text-secondary">
+                    Simplifiez votre recrutement, découvrez des talents exceptionnels
+                    et construisez une équipe performante.
+                </h4>
+
+                <p class="text-black fs-5">
+                    Avec notre plateforme e-recrutement ,façonnez l'avenir de votre
+                    entreprise dès aujourd'hui.
+                </p>
+                <br />
+                <div class="text-center mb-4 mb-sm-2 mb-md-0">
+                    
+                    <a href="@Url.Action("Index", "Offres")" class="btn btn-outline-primary fs-5">
+                        Decouvrir les offres
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                     width="500"
+                     height="500"
+                     src="~/Assets/img/rec.png" />
+            </div>
+        </div>
+
+        <hr class="featurette-divider" />
+
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading text-center">ASP.NET Framework</h2>
+                <h4 class="text-secondary">
+                    Simplifiez le developpement, découvrez des talents exceptionnels
+                    et construisez une équipe performante.
+                </h4>
+
+                <p class="text-black fs-5">
+                    ASP.NET est un framework web de Microsoft qui permet le
+                    développement d'applications web évolutives et structurées
+                </p>
+                <br />
+                <div class="text-center mb-4 mb-sm-2 mb-md-0">
+                    <a href="https://dotnet.microsoft.com/en-us/apps/aspnet/mvc"
+                       target="_blank"
+                       class="btn btn-outline-primary fs-5">
+                        Savoir plus
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-5 order-md-1">
+                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                     width="500"
+                     height="500"
+                     src="~/Assets/img/asp.jpg" />
+            </div>
+        </div>
+
+        <hr class="featurette-divider" />
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading text-center">EHTP</h2>
+                <h4 class="text-secondary">École Hassania des Travaux Publics</h4>
+
+                <p class="text-black fs-5">
+                    EHTP:est une grande école d'ingénieurs située à Casablanca, au
+                    Maroc, Fondée en 1971.
+                </p>
+                <br />
+                <div class="text-center mb-4 mb-sm-2 mb-md-0">
+                    <a href="http://www.ehtp.ac.ma/index.php"
+                       target="_blank"
+                       class="btn btn-outline-primary fs-5">
+                        Savoir plus
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
+                     width="500"
+                     height="500"
+                     src="~/Assets/img/ehtp.png" />
+            </div>
+        </div>
+        <br />
+        <hr class="featurette-divider" />
+    </div>
+</main>

@@ -1,0 +1,126 @@
+﻿@model Project2024.Models.Candidate
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<section class="">
+    <div class="container-fluid h-custom ">
+        <div class="row d-flex justify-content-center align-items-center ">
+            <div class="col-md-8 col-lg-6 col-xl-5">
+                <img src="https://cdni.iconscout.com/illustration/premium/thumb/sign-up-8044864-6430773.png"
+                     class="img-fluid" alt="Sample image">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1  ">
+                @using (Html.BeginForm("Register", "Candidates", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+
+                <div class="form-horizontal  d-grid justify-content-center d-lg-block  ">
+                    <h4>Candidate register</h4>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group ">
+                        @Html.LabelFor(model => model.CandidateName, htmlAttributes: new { @class = "control-label " })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.CandidateName, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.CandidateName, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CandidatePrename, htmlAttributes: new { @class = "control-label" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.CandidatePrename, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.CandidatePrename, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CandidateEmail, htmlAttributes: new { @class = "control-label" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.CandidateEmail, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.CandidateEmail, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CandidatePassword, htmlAttributes: new { @class = "control-label " })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.CandidatePassword, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.CandidatePassword, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CandidateAge, htmlAttributes: new { @class = "control-label " })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.CandidateAge, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.CandidateAge, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CandidateNbExperiences, htmlAttributes: new { @class = "control-label " })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.CandidateNbExperiences, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.CandidateNbExperiences, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CandidateAddress, htmlAttributes: new { @class = "control-label " })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.CandidateAddress, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.CandidateAddress, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.CandidateDiploma, new { @class = "control-label " })
+                        <div class="col-md-10">
+                            @Html.DropDownListFor(model => model.CandidateDiploma, (SelectList)ViewBag.DiplomaList, "Select Diploma", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.CandidateDiploma, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.UploadedCVFile, htmlAttributes: new { @class = "control-label " })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(model => model.UploadedCVFile, new { type = "file", @class = "form-control " })
+                            @Html.ValidationMessageFor(model => model.UploadedCVFile, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 mt-4 col-md-10 ">
+                            <input type="submit" value="sign up" class="btn btn-outline-primary w-100" />
+                        </div>
+                    </div>
+                    <div class="form-group mt-2">
+                        <span>
+                            have an account?
+                        </span>
+                        <a href="@Url.Action("Login", "Candidates")" class="link-primary fw-bold">
+                            login
+                        </a>
+                    </div>
+                </div>
+                }
+
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

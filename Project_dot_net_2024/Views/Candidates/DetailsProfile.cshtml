@@ -1,0 +1,69 @@
+﻿@model Project2024.Models.Candidate
+
+@{
+    ViewBag.Title = "DetailsProfile";
+}
+
+
+
+
+<div class="container p-0">
+    <h2>DetailsProfile</h2>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <tr class="table-success">
+                <th>
+                    @Html.DisplayNameFor(model => model.CandidateName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CandidatePrename)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CandidateEmail)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CandidatePassword)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CandidateAge)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CandidateDiploma)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CVFile)
+                </th>
+            </tr>
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.CandidateName)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.CandidatePrename)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.CandidateEmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.CandidatePassword)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.CandidateAge)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.CandidateDiploma)
+                </td>
+                
+                <td>
+                    <a href="@Url.Action("DownloadCV", new { id = Model.CandidateID })" class="btn btn-outline-primary fw-semibold"><i class="fa-solid fa-download"></i></a>
+                </td>
+            </tr>
+
+
+        </table>
+    </div>
+</div>
+
+
+

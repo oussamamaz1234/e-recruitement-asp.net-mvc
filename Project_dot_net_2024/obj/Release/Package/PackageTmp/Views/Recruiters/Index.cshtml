@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Project2024.Models.Recruiter>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RecruiterName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecruiterMail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecruiterPassword)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecruiterTel)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecruiterName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecruiterMail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecruiterPassword)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecruiterTel)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RecruiterID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.RecruiterID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.RecruiterID })
+        </td>
+    </tr>
+}
+
+</table>

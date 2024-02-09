@@ -1,0 +1,81 @@
+﻿@model IEnumerable<Project2024.Models.Offre>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+
+<div class="container p-0">
+    @if (Session["RecruiterID"] != null)
+    {
+        <p>
+            <a class="btn btn-primary" href="@Url.Action("AddOffre", "Recruiters")">ajouter offre</a>
+        </p>
+    }
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <tr class="table-success">
+                <th>
+                    @Html.DisplayNameFor(model => model.Recruiter.RecruiterName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ContractType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Sector)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Profile)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Post)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Remuneration)
+                </th>
+
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Recruiter.RecruiterName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ContractType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sector)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Profile)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Post)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Remuneration)
+                    </td>
+                    @if (Session["CandidateID"] != null)
+                    {
+                        <td>
+                            <a class="btn btn-outline-success" href="@Url.Action("Postuler", "Candidates", new { id = item.OffreID })">
+                                <i class="fa-solid fa-circle-plus"></i>
+                            </a>
+                        </td>
+                    }
+
+
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
+
+
+
+
